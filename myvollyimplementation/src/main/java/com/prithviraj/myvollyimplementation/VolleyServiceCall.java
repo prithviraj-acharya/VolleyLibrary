@@ -42,7 +42,7 @@ public abstract class VolleyServiceCall {
     private String tag = null;
 
     public abstract void onResponse(String s);
-    public abstract void onError(String errorMessage);
+    public abstract void onError(VolleyError error, String errorMessage);
 
     public class TAG {
         public static final String LOCATION = "LOCATION";
@@ -105,7 +105,7 @@ public abstract class VolleyServiceCall {
                                 if (error.networkResponse.data != null)
                                     Log.d("ERROR_", new String(error.networkResponse.data));
 
-                        onError(returnErrorMsg(error));
+                        onError(error,returnErrorMsg(error));
                     }
                 }) {
                     @Override
@@ -132,7 +132,7 @@ public abstract class VolleyServiceCall {
                                 if (error.networkResponse.data != null)
                                     Log.d("ERROR_ZXCV", new String(error.networkResponse.data));
 
-                        onError(returnErrorMsg(error));
+                        onError(error,returnErrorMsg(error));
                     }
                 }) {
                     @Override
@@ -173,7 +173,7 @@ public abstract class VolleyServiceCall {
                                 if (error.networkResponse.data != null)
                                 Log.d("ERROR_", new String(error.networkResponse.data));
 
-                    onError(returnErrorMsg(error));
+                    onError(error,returnErrorMsg(error));
                 }
             }) {
                 @Override
