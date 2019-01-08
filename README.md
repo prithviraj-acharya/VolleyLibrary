@@ -16,7 +16,7 @@ the classes and created the end-points for you guys and i have let an API Error 
   
   
 dependencies {
-    implementation 'com.github.Prithviraj1995:VolleyLibrary:0.1.0'
+    implementation 'com.github.Prithviraj1995:VolleyLibrary:0.1.1'
 }
   
  
